@@ -38,13 +38,13 @@
             <i :class="'bi-x-circle moka-icons z-max text-2xl md:hidden fixed top-0 right-0 m-2 ' + el.css.css" v-if="el.element === 'menu' && el.responsive" @click="showmenu"></i>
             <div v-for="(item,i) in el.items" :class="el.css.css + ' cursor-pointer relative p-1'"> 
                 
-                <nuxt-link :class="el.css.css" style="font-size:1.5rem;" v-if="!item.link.includes('http')||!item.link.includes('#')" :to="item.link">{{ item.label }}</nuxt-link>
-                <a :href="item.link" v-if="item.link.includes('http')||item.link.includes('#')" target="_blank">{{item.label}}</a>
+                <nuxt-link :class="el.css.css" style="font-size:1.5rem;" v-if="!item.link.includes('http') && !item.link.includes('#')" :to="item.link">{{ item.label }}</nuxt-link>
+                <a :href="item.link" :class="el.css.css" v-if="item.link.includes('http') || item.link.includes('#')" style="font-size:1.5rem" target="_blank">{{item.label}}</a>
                 
                 <div v-if="item.submenu && item.submenu.length" :class="el.css.css + ' ml-2 flex flex-col'"> 
                     <div v-for="sub in item.submenu">
-                        <nuxt-link  v-if="!item.link.includes('http')||!item.link.includes('#')" :class="el.css.css" style="font-size:1.5rem;" :to="sub.link">{{ sub.label }}</nuxt-link>
-                        <a  v-if="item.link.includes('http')||item.link.includes('#')":class="el.css.css" style="font-size:1.5rem;" :href="sub.link">{{ sub.label }}</a>
+                        <nuxt-link  v-if="!item.link.includes('http') && !item.link.includes('#')" :class="el.css.css" style="font-size:1.5rem;" :to="sub.link">{{ sub.label }}</nuxt-link>
+                        <a v-if="item.link.includes('http') || item.link.includes('#')" :class="el.css.css" :href="sub.link" style="font-size:1.5rem;">{{ sub.label }}</a>
                     </div>
                 </div>
             </div>
