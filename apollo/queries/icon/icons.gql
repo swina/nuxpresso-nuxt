@@ -1,0 +1,6 @@
+query Icons {
+    icons {
+        name
+        svg
+    }
+}

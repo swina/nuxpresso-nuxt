@@ -1,0 +1,18 @@
+query Menus ( $type : String) {
+  menus ( where : { type: $type }) {
+    name
+    type
+    items {
+        order
+        name
+        article {
+            title
+            slug
+        }
+        category {
+            name
+            slug
+        }
+    }
+  }
+}

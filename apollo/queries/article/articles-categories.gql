@@ -1,0 +1,26 @@
+query Category($id: ID! , $limit: Int , $start: Int ){
+  category( id: $id , limit: $limit , start: $start , sort: "updated_at:desc"  ) {
+    name
+    articles {
+      id
+      slug
+      title
+      content
+      tags
+      lang
+      parent {
+        slug
+        title
+      }
+      image {
+        url
+        caption
+        alternativeText
+      }
+      categories {
+        id
+        name
+      }
+    }
+  }
+}

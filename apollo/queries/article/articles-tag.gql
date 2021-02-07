@@ -1,0 +1,18 @@
+query Articles ( $tag: String ) {
+  articles ( where:{ tags_contains : $tag } ){
+    slug
+    title
+    excerpt
+    image{
+      url
+      caption
+      alternativeText
+      previewUrl
+    }
+    categories {
+      name
+      slug
+    }
+    blocks
+  }
+}

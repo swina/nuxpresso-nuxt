@@ -1,0 +1,7 @@
+query Articles (  $master : String ) {
+  articles ( where:{ parent : { slug: $master } } ){
+    title
+    slug
+    lang
+  }
+}

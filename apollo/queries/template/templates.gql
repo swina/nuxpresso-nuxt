@@ -1,0 +1,66 @@
+query Templates {
+  templates {
+    id
+    name
+    default
+    class
+    homepage
+    fields {
+      name
+      class
+      shortcode 
+      textbox
+      widget {
+          id
+      }
+      menu {
+        id
+      }
+      image {
+        url
+        caption
+        alternativeText
+      }
+      random_image
+    }
+    col_1_class
+    fields_col_2 {
+      name
+      class
+      shortcode
+      textbox
+      widget {
+          id
+      }
+      menu {
+        id
+      }
+      image {
+        url
+        caption
+        alternativeText
+      }
+      random_image
+    }
+    col_2_class
+    fields_col_3 {
+      name
+      class
+      shortcode
+      textbox
+      widget {
+          id
+      }
+      menu {
+        id
+      }
+      image {
+        url
+        caption
+        alternativeText
+      }
+      random_image
+    }
+    col_3_class
+  }
+}

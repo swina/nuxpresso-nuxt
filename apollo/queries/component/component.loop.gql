@@ -1,0 +1,17 @@
+query Components {
+	components( where : { loop:true , category: "template" }){
+    	id
+        name
+        description
+        category
+        image {
+            url
+        }
+    	json
+        autosave
+        updated_at
+    	loop
+    	loop_type
+        loop_limit
+  }
+}

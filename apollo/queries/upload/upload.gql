@@ -1,0 +1,12 @@
+query Upload ($limit: Int , $start: Int){
+  files ( limit : $limit , start: $start ){
+  	id
+    name
+    url
+    width
+    height
+    size
+    ext
+    formats
+  }
+}

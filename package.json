@@ -1,0 +1,41 @@
+{
+  "name": "nuxpresso-0.0.1",
+  "version": "0.0.1",
+  "description": "NuxtJS/Strapi/TailwindCSS/GraphQL Full Static Site Generator",
+  "author": "Antonio Nardone",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "export": "nuxt export",
+    "serve": "nuxt serve",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/apollo": "^4.0.1-rc.1",
+    "@nuxtjs/axios": "^5.11.0",
+    "@nuxtjs/markdownit": "^1.2.9",
+    "@nuxtjs/recaptcha": "^0.6.2",
+    "@nuxtjs/vercel-builder": "^0.18.1",
+    "alloyfinger": "^0.1.16",
+    "apollo-cache-inmemory": "^1.6.6",
+    "dotenv": "^8.2.0",
+    "fs-extra": "^9.1.0",
+    "graphql": "^15.3.0",
+    "graphql-tag": "^2.10.3",
+    "gsap": "^3.5.1",
+    "nuxt": "^2.13.0",
+    "rsvp": "^4.8.5",
+    "validator": "^13.5.2",
+    "vue-gravatar": "^1.3.1",
+    "vue-simple-svg": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/runtime-corejs3": "^7.10.4",
+    "@nuxtjs/google-analytics": "^2.4.0",
+    "@nuxtjs/tailwindcss": "^3.2.0",
+    "core-js": "2.5.7"
+  }
+}

@@ -1,0 +1,30 @@
+query Articles ($slug:String) {
+  articles ( where: { categories : { slug:$slug } , loop: true , homepage: false } ) {
+    slug
+    title
+    excerpt
+    content
+    homepage
+    random_image
+    tags
+    lang
+    image {
+      url
+      caption
+      alternativeText
+    }
+    gallery {
+      url
+      caption
+      alternativeText
+    }
+    image_title
+    updated_at
+    seo_title
+    seo_description
+    categories {
+        name
+        slug
+    }
+  }
+}

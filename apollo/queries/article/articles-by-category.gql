@@ -1,0 +1,18 @@
+query Articles ($slug:String) {
+  articles ( where: { categories : { slug:$slug } , homepage: false } ) {
+    slug
+    title
+    excerpt
+    updated_at
+    image{
+      url
+      caption
+      alternativeText
+      previewUrl
+    }
+    categories {
+      name
+      slug
+    }
+  }
+}

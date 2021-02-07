@@ -1,0 +1,39 @@
+query Themes {
+  themes {
+    Header { 
+      ... on ComponentWidgetsLogo {
+        image {
+          url
+        }
+      }
+      ... on ComponentMenuItemsNavigation {
+        navigation_item {
+          id
+          name
+          URL
+          article {
+            slug
+          }
+          category {
+            slug
+          }
+        }
+      }
+    }
+    Sidebar {
+      ... on ComponentMenuItemsNavigation {
+        navigation_item {
+          id
+          name
+          URL
+          article {
+            slug
+          }
+          category {
+            slug
+          }
+        }
+      }
+    }
+  }
+}

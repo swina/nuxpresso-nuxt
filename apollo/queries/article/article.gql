@@ -1,0 +1,33 @@
+query Articles($id: ID!) {
+  article(id: $id) {
+    id
+    title
+    excerpt
+    content
+    slug
+    lang
+    image {
+      url
+      caption
+      alternativeText
+    }
+    gallery {
+      url
+      caption
+      alternativeText
+    }
+    image_title
+    updated_at
+    categories {
+        name
+        slug
+    }
+    tags {
+      tag
+    }
+    template {
+      id
+      name
+    }
+  }
+}

@@ -1,0 +1,12 @@
+query Components ( $blocks_id : String ) {
+	components( where : { blocks_id : $blocks_id , category : "template"  }){
+    	id
+        name
+        blocks_id
+    	json
+        updated_at
+    	loop
+    	loop_type
+        loop_limit
+  }
+}

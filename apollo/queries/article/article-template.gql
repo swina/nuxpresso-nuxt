@@ -1,0 +1,79 @@
+query Articles ( $template : Int){
+  articles( where : { template :{ id:$template } } ) {
+    title
+    slug
+    excerpt
+    content
+    homepage
+    random_image
+    tags
+    lang
+    user {
+      username
+    }
+    image { 
+        name 
+        url
+    }
+    gallery {
+        name
+        url
+    }
+    image_title
+    updated_at
+    seo_title
+    seo_description
+    categories {
+        name
+        slug
+    }
+    parent {
+      slug
+      title
+    }
+    template {
+      id
+      name
+      class
+      fields {
+        name
+        class
+        shortcode 
+        textbox
+        widget {
+            id
+        }
+        menu {
+          id
+        }
+      }
+      col_1_class
+      fields_col_2 {
+        name
+        class
+        shortcode
+        textbox
+        widget {
+            id
+        }
+        menu {
+          id
+        }
+      }
+      col_2_class
+      fields_col_3 {
+        name
+        class
+        shortcode
+        textbox
+        widget {
+            id
+        }
+        menu {
+          id
+        }
+      }
+      col_3_class
+    }
+  } 
+}

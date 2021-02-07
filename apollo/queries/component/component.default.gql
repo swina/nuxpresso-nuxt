@@ -1,0 +1,5 @@
+query Components {
+    components( where : { default: true} ) { 
+        json
+    }
+}

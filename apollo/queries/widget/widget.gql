@@ -1,0 +1,13 @@
+query Widgets{
+    widget {
+        id
+        component {
+            __typename
+            ... on ComponentWidgetFeatures {
+                title
+                subtitle
+                image { url }
+            }
+        }
+    }
+}

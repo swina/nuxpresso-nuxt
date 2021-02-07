@@ -1,0 +1,26 @@
+query Settings {
+  setting {
+    site_name
+    site_title
+    show_title
+    breadcrumb
+    darkmode
+    responsive_menu_css
+    responsive_menu_transition
+    autoimage
+    authentication
+    scrolltop
+    seo_title
+    seo_description
+    read_more
+    logo_img {
+      url
+      caption
+      alternativeText
+    }
+    email
+    github
+    twitter
+    footer
+  }
+}

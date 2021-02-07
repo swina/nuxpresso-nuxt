@@ -1,0 +1,17 @@
+query Articles {
+  articles ( where :{ homepage: true }) {
+    title
+    content
+    excerpt
+    homepage
+    template_id
+    lang
+    parent {
+      title
+      slug
+    }
+    seo_title
+    seo_description
+    blocks
+  }
+}

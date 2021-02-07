@@ -1,0 +1,34 @@
+query Articles ( $limit : Int, $start : Int ) {
+  articles ( limit: $limit , start: $start , sort: "updated_at:desc" , where : { list_exclude: false , homepage: false } ){
+    slug
+    title
+    excerpt
+    content
+    homepage
+    random_image
+    tags
+    lang
+    image {
+      url
+      caption
+      alternativeText
+    }
+    gallery {
+      url
+      caption
+      alternativeText
+    }
+    image_title
+    updated_at
+    seo_title
+    seo_description
+    categories {
+        name
+        slug
+    }
+    parent {
+      slug
+      title
+    }
+  }
+}

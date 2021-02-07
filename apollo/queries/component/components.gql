@@ -1,0 +1,13 @@
+query Components {
+    components {
+        id
+        name
+        description
+        category
+        default
+        image {
+            url
+        }
+        updated_at
+    }
+}

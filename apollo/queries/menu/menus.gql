@@ -1,0 +1,75 @@
+query Menus {
+  menus {
+    id
+    name
+    type
+    orientation
+    css
+    mobile
+    background {
+      color
+      density
+      css
+      tw_color
+      image {
+        url
+      }
+    }
+    foreground {
+      color
+      density
+      css
+      tw_color
+    }
+    menu_background {
+      color
+      density
+      css
+      tw_color
+    }
+    menu_foreground {
+      color
+      density
+      css
+      tw_color
+    }
+    background_color {
+      color
+      density
+      css
+    }
+    
+    text_color {
+      color
+      density
+      css
+    }
+    items {
+        order
+        name
+        css
+        article {
+            title
+            slug
+        }
+        category {
+            name
+            slug
+        }
+        link_url
+        submenu {
+          id
+          items {
+            name 
+            article {
+              slug
+            }
+            category {
+              slug
+            }
+            link_url
+          }
+        }
+    }
+  }
+}
