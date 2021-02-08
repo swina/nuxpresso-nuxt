@@ -11,7 +11,7 @@ function importAssets(){
   console.log ( 'Importing assets ...')
   fs.copy(process.env.UPLOADS_FOLDER ,'./static/uploads' )
   .then(() => {
-    console.log('Done. Assets imported!')
+    console.log('Assets imported!')
   })
   .catch(err => {
     console.error(err)
