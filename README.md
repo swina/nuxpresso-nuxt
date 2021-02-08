@@ -21,17 +21,21 @@ To install nuxpresso please read the [documentation](https://nuxpresso-docs.verc
 
 ## What is Nuxpresso?
 
-> The beta version doesn't support MongoDB database.
+> 
+> The beta version doesn't support MongoDB database for Strapi CMS.
+>
 
-**NUXPRESSO** is a website generator based on block driven page design.
+**NUXPRESSO** is a website generator developed with NuxtJS and based on block driven page design.
 
-Using **MOKAStudio visual blocks builder** you compose your page according to the pieces of information you need to publish.
+Using [**MOKAStudio visual blocks builder**](https://github.com/swina/nuxpresso-moka) you compose your page according to the pieces of information you need to publish.
 
 You can reuse created blocks, change layout, css classes can be customized, HTML elements can be added, copied, duplicated, removed. Your blocks are filled like a form, you stack them and create a page.
 
 Thus means enabling maximum reusability and design control while allowing content changes with clear boundaries.
 
+> 
 > NUXPRESSO is markup, js and styling coupling applied to webpages. All of this without coding.
+>
 
 You can create shareable blocks that can be used for rich editing experiences in a UI in different projects just exporting/importing them.
 
