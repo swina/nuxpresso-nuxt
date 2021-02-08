@@ -2,19 +2,20 @@
 
 
 
-<img src="https://res.cloudinary.com/moodgiver/image/upload/v1609196023/layers_big_cc995d26d2.png" style="width:400px;height:auto;margin:0 auto;">
+<img src="https://res.cloudinary.com/moodgiver/image/upload/v1609196023/layers_big_cc995d26d2.png" style="width:400px;height:auto;margin:0 auto;" style="width:200px">
 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e974fdc2-1af3-4fd2-a5c9-638ae7f46c46/deploy-status)](https://app.netlify.com/sites/nuxpresso/deploys)
+
 
 ## Demo
 
 You can check the [nuxpresso website](https://nuxpresso.netlify.app)
 
+
 ## Documentation
 
-Full [documentation](https://nuxpresso-docs.vercel.app)
-
+To install nuxpresso please read the [documentation](https://nuxpresso-docs.vercel.app)
 
 
 
