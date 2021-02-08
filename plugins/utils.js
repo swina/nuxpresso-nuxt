@@ -1,5 +1,5 @@
     import Vue from 'vue'
-    import moment from 'moment'
+    //import moment from 'moment'
     import {SimpleSVG} from 'vue-simple-svg'
     Vue.component('simple-svg', SimpleSVG)
 
@@ -105,8 +105,21 @@
         return icons.split(',')
     }
 
-    Vue.prototype.$moment = function ( d= new Date ) {
-        return moment ( d ).format ( 'MM-DD-YYYY')
+    Vue.prototype.$moment = function ( d= new Date , format = 'MM-DD-YYYY') {
+        let D = {
+            month: d.getMonth()+1,
+            day : d.getDate(),
+            year : d.getFullYear()
+        }
+        let keys = ['month','day','year']
+        if ( format != 'MM-DD-YYYY' ){
+            keys = ['da','month','year' ]
+        }
+        let returnDate = keys.map ( key => {
+            return D[key]
+        }).join('-')
+        return returnDate
+        //return moment ( d ).format ( 'MM-DD-YYYY')
     }
 
     Vue.prototype.$slugify = function ( text = '' ){

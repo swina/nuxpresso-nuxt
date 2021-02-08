@@ -11,6 +11,7 @@ export default {
     props: ['el'],
     mounted(){
         gsap = this.$animation(this.el,this.el.id,this.$refs)
+        
     },
     beforeDestroy(){
         if ( gsap ) gsap.timeline().kill()

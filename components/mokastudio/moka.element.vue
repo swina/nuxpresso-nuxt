@@ -1,7 +1,5 @@
 <template>
     <div v-if="element" :ref="element.id" :id="el.hasOwnProperty('anchor') && el.anchor?el.anchor:el.id" :style="element.style" element @click="element.hasOwnProperty('action') ? $emit('click',element.action) : null"> 
-            
-
             <component :class="$classe(el.css)" :is="tag" v-html="el.content" v-if="(el.tag==='element' || el.type==='button')  && el.element !='img' && el.type != 'video' && el.type != 'audio' && !el.link && !el.action" :style="$stile(el.style)"></component>
             
             <nuxt-link v-if="el.link" :to="el.link">
@@ -9,13 +7,17 @@
             </nuxt-link>
 
 
+
+
             <!-- form action -->
             <component :class="$classe(el.css)" :is="tag" v-html="el.content" v-if="(el.tag==='element' || el.type==='button')  && el.element !='img' && el.type != 'video' && el.type != 'audio' && !el.link && el.action" :style="$stile(el.style)" @click="doAction(el.action)"></component>
 
 
 
-            <component :style="stile" :class="$classe(el.css)" :is="tag" v-if="el.tag === 'article' && el.label!='image'" v-html="$attrs.article[el.label]"/>
+            <component :style="stile" :class="$classe(el.css)" :is="tag" v-if="el.tag === 'article' && el.label!='image' && el.type != 'date'" v-html="$attrs.article[el.label]"/>
             <!--<component :class="$cssResponsive(el.css)" :is="tag" v-if="el.tag === 'article'" v-html="el.content"/>-->
+            
+            <div v-if="el.type==='date'" :class="$classe(el.css)">{{ $moment ( article[el.label] ) }}</div>
 
             <svg v-if="el.tag === 'svg'" width="100%" height="100%" :viewBox="el.content.viewBox" v-html="el.content.g" :class="el.css + ' fill-current'"></svg>
  
@@ -40,6 +42,7 @@
             <!--<img :ref="element.id" v-if="el.element === 'img' && !el.image" src="../assets/no-image.png" :class="$cssResponsive(el.css)"/>-->
             
             <input :type="el.type" :name="el.name" :placeholder="el.placeholder" v-if="el.tag === 'input' && el.type!='button' && el.element!='textarea'" :class="$classe(el.css)" :value="el.content"/><sup v-if="el.required" class="ml-1 nuxpresso-element-required">*</sup>
+
 
             <!-- icon -->
             <i v-if="el.tag==='icon' && !el.link" :class="'material-icons moka-icons ' + $classe(el.css)">{{el.content}}</i>

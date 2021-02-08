@@ -16,6 +16,7 @@
                     :key="field.id" 
                     :ref="field.id" 
                     v-if="field.type==='date'">
+                    {{ field }}
                     {{ $moment( article.updated_at )}}
                 </div>
                 

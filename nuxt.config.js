@@ -53,6 +53,7 @@ let dynamicRoutes = () => {
   })
 }
 
+console.log ( process.env.NODE_ENV )
 export default {
   
   target: 'static',
@@ -188,6 +189,21 @@ export default {
      */
     srcDir: 'src',
     buildDir: 'dist',
+    extractCSS: true,
+    
+    // this is not required, output as one css file instead of one by page.
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
+    },
     extend(config, ctx) {},
     transpile: [
       "gsap"

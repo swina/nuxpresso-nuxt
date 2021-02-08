@@ -13,7 +13,8 @@ gsap.registerEffect({
                 opacity:1,
                 duration: config.duration, 
                 ease: config.ease,
-                delay: config.delay
+                delay: config.delay,
+                clearProps: 'opacity'
             }
         );
     },
@@ -35,7 +36,8 @@ gsap.registerEffect({
                 opacity:1,
                 duration: config.duration, 
                 ease: config.ease,
-                delay: config.delay
+                delay: config.delay,
+                clearProps: 'opacity'
             }
         );
     },
@@ -54,7 +56,8 @@ gsap.registerEffect({
                 opacity: 1,
                 duration: config.duration, 
                 delay: config.delay,
-                ease: config.ease
+                ease: config.ease,
+                clearProps: 'opacity'
             }
         );
     },
@@ -78,7 +81,8 @@ gsap.registerEffect({
                 rotation: 360,
                 x:0,
                 ease: config.ease,
-                delay: config.delay
+                delay: config.delay,
+                clearProps: 'opacity'
             }
         );
     },
@@ -95,7 +99,8 @@ gsap.registerEffect({
                 opacity:1,
                 scale:1,
                 duration: config.duration,
-                ease: config.ease 
+                ease: config.ease,
+                clearProps: 'all' 
             }
         );
     },
@@ -116,7 +121,8 @@ gsap.registerEffect({
                 scale:1,
                 duration: config.duration,
                 delay: config.delay,
-                ease: config.ease
+                ease: config.ease,
+                clearProps: 'all'
             }
         );
     },
@@ -137,7 +143,8 @@ gsap.registerEffect({
                 scale:1,
                 duration: config.duration,
                 delay: config.delay ,
-                ease: config.ease
+                ease: config.ease,
+                clearProps: 'all'
             }
         );
     },
@@ -160,7 +167,8 @@ gsap.registerEffect({
                 scale:1,
                 duration: 1,
                 delay: config.delay,
-                ease: config.ease 
+                ease: config.ease,
+                clearProps: 'all' 
             }
         );
     },
@@ -183,7 +191,8 @@ gsap.registerEffect({
                 x:0,
                 duration:config.duration,
                 delay: config.delay,
-                ease: config.ease
+                ease: config.ease,
+                clearProps: 'all'
             }
         )
     },
@@ -206,7 +215,8 @@ gsap.registerEffect({
                 x:0,
                 duration:config.duration,
                 delay: config.delay,
-                ease: config.ease
+                ease: config.ease,
+                clearProps: 'all'
             }
         )
     },
@@ -231,7 +241,8 @@ gsap.registerEffect({
                 y:0,
                 duration:config.duration,
                 delay: config.delay,
-                ease: config.ease
+                ease: config.ease,
+                clearProps: 'all'
             }
         )
     },
@@ -254,7 +265,8 @@ gsap.registerEffect({
                 y:0,
                 duration:config.duration,
                 delay: config.delay,
-                ease: config.ease
+                ease: config.ease,
+                clearProps: 'all'
             }
         )
     },
@@ -277,7 +289,8 @@ gsap.registerEffect({
                 width:"100%",
                 duration:config.duration,
                 delay: config.delay,
-                ease: config.ease
+                ease: config.ease,
+                clearProps: 'all'
             }
         )
     },
@@ -303,7 +316,8 @@ gsap.registerEffect({
                 width:"100%",
                 duration:config.duration,
                 delay: config.delay,
-                ease: config.ease
+                ease: config.ease,
+                clearProps: 'all'
             }
         )
     },
@@ -325,7 +339,8 @@ gsap.registerEffect({
                 width:0,
                 duration:config.duration,
                 delay: config.delay,
-                ease: config.ease
+                ease: config.ease,
+                clearProps: 'all'
             }
         )
     },
@@ -345,7 +360,8 @@ gsap.registerEffect({
                 x:"100%",
                 duration:config.duration,
                 delay: config.delay,
-                ease: config.ease
+                ease: config.ease,
+                clearProps: 'all'
             }
         )
     },
@@ -368,7 +384,8 @@ gsap.registerEffect({
                 scaleY:1,
                 duration:config.duration,
                 delay: config.delay,
-                ease: config.ease
+                ease: config.ease,
+                clearProps: 'all'
             }
         )
     },

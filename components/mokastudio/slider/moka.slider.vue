@@ -195,7 +195,7 @@ export default {
         })
     },
     beforeDestroy(){
-      console.log ( 'destroy timer ...' )
+      //console.log ( 'destroy timer ...' )
       clearInterval(this.timer)
       this.timer = null
     }

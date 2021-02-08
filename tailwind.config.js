@@ -4,9 +4,25 @@
 ** Docs: https://tailwindcss.com/docs/configuration
 ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 */
+
+const { colors  } = require('tailwindcss/defaultTheme')
+
+
 module.exports = {
   theme: {
-    
+    colors:{
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: colors.black,
+      white: colors.white,
+      gray: colors.gray,
+      blue: colors.blue,
+      teal: colors.teal,
+      green: colors.green,
+      orange: colors.orange,
+      red: colors.red,
+      indigo: colors.indigo
+    },
     maxWidth: {
           '1/4': '25%',
           '1/2': '50%',
@@ -174,6 +190,7 @@ module.exports = {
       'nuxt.config.js'
     ],
     options: {
+      whitelist: ['html','body'],
       whitelistPatterns: [/^leading/,/^bg/,/^text/,/^border/,/^hover/,/^grid/,/^grid-cols-/,/^m/,/^p/,/^flex/,/^order/,/^md:/,/^lg:/,/^w/,/^h/,/^rounded/,/^content/,/^items/,/^object/,/^font/,/^animate/,/^shadow/,/^gap/,/^grayscale/]
     }
   }

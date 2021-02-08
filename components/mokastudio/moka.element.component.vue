@@ -56,6 +56,14 @@ export default {
                 return el.link ? this.linkComponent(el.link) : MokaText
                 return MokaText
             }
+
+            if ( el.tag === 'article' && el.type === 'date' ){
+                this.$attrs.element.content = this.$moment(this.$attrs.article[el.label])
+                this.child = MokaText
+                return el.link ? this.linkComponent(el.link) : MokaText
+                return MokaText
+            }
+
             if ( el.tag === 'article' && el.element === 'img' ){
                 this.$attrs.element.image = this.$attrs.article.featured_img//this.$attrs.article[el.label]
                 this.child = MokaImg

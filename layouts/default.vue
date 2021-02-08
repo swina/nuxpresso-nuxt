@@ -1,7 +1,7 @@
 <template>
   <div id="nuxpresso-page">
     <nuxt/>
-    <scroll-top v-if="settings.scrolltop"/>
+    <scroll-top v-if="settings && settings.scrolltop"/>
   </div>
 </template>
 

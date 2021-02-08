@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import moment from 'moment'
+//import moment from 'moment'
 const pixels = [ 1 , 4 , 8 , 12 , 16 , 20 , 24 , 32 , 40 , 48, 64 , 80 , 96 , 128 , 160 , 192 , 224 , 256 ]
 const pixelsAttrs = {
     'p' : 'padding' ,

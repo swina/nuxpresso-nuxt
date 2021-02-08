@@ -11,7 +11,8 @@ import gsapEffects from './animations'
                     trigger: refs[id],
                     duration: parseFloat(element.gsap.duration),
                     delay: parseFloat(element.gsap.delay),
-                    ease: element.gsap.ease
+                    ease: element.gsap.ease,
+                    clearProps: 'all'
                 })
 
                 ScrollTrigger.create({
@@ -27,7 +28,6 @@ import gsapEffects from './animations'
                             ani.play(0)
                         }
                     },
-                    
                 });
                 return gsap    
             }

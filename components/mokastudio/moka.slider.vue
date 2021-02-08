@@ -48,7 +48,6 @@ export default {
     },
     methods:{
         hasSlideAction(action){
-            console.log ( 'clicked => ' , action )
             action === 'slider_next' ? 
                     this.next(1) : 
                         action === 'slider_prev' ? this.next(-1)
@@ -58,7 +57,6 @@ export default {
             this.index < (this.doc.blocks.length + n) ? this.index += n : this.index = 0
             this.index < 0 ? this.index = 0 : null
             this.index >= this.doc.blocks.length ? this.index = 0 : null
-            console.log ( 'clicked next =>' , this.index )
             let tl = gsap.timeline()
             tl.to ( '.slide' , { xPercent: -this.index*100 , opacity:1 , duration: 1.5 } )
             

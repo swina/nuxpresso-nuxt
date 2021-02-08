@@ -26,6 +26,8 @@ export default {
     },
     mounted(){
         gsap = this.$animation(this.el,this.el.id,this.$refs)
+        
+        this.el.style = this.el.style
     },
     beforeDestroy(){
         if ( gsap ) gsap.timeline().kill()
