@@ -17,6 +17,7 @@ import MokaSimpleSvg from '@/components/mokastudio/elements/moka.simple.svg'
 import MokaArticle from '@/components/mokastudio/elements/moka.article'
 import MokaLink from '@/components/mokastudio/elements/moka.link'
 import MokaUrl from '@/components/mokastudio/elements/moka.url'
+import MokaDownload from '@/components/mokastudio/elements/moka.download'
 export default {
     name: 'MokaRenderElement',
     components: {
@@ -31,7 +32,8 @@ export default {
         MokaSimpleSvg,
         MokaArticle,
         MokaLink,
-        MokaUrl
+        MokaUrl,
+        MokaDownload
     },
     data:()=>({
         css: '',
@@ -106,6 +108,10 @@ export default {
             if ( (el.element === 'img')  && el.image && el.image.ext === '.svg' ) {
                 this.child = MokaSimpleSvg
                 return el.link ? this.linkComponent(el.link) : MokaSimpleSvg 
+            }
+            if ( el.type === 'file' && el.link ){
+                this.child = MokaText
+                return MokaDownload
             }
         }
     },

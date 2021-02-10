@@ -1,5 +1,5 @@
 <template>
-    <a :href="el.link" class="" target="_blank">
+    <a :href="el.link" class="" target="_blank" :download="download">
         <component :is="component" :component="component" :el="el"/>
     </a>
 </template>
@@ -11,6 +11,9 @@ export default {
     computed: {
         component(){
             return this.child
+        },
+        download(){
+            return this.child.type === 'file' ? true : false
         }
     }
 }

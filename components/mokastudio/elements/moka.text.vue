@@ -10,7 +10,7 @@ export default {
     computed:{
         component(){
             let el = this.el
-            if ( ( el.tag === 'element' || el.type === 'button' || el.type === 'element' || el.type === 'date' ) && el.element != 'img' && el.type != 'video' && el.type != 'audio' ) {
+            if ( ( el.tag === 'element' || el.type === 'button' || el.type === 'element' || el.type === 'date' || el.type === 'file' ) && el.element != 'img' && el.type != 'video' && el.type != 'audio' ) {
                 return el.hasOwnProperty('level') ? 'h' + el.level : el.element
             } 
         }
