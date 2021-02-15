@@ -131,7 +131,7 @@ export default {
                 vm.response = '<p class="animate-pulse">Sendig your request ...</p>'
                 vm.responseClass = 'text-blue-400'
                 this.enabled = false
-                fetch( process.env.emailSender , {
+                fetch( this.doc.action || process.env.emailSender , {
                     mode: 'no-cors',
                     method: 'POST',
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },

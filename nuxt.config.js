@@ -64,7 +64,7 @@ export default {
   env: {
     strapiBaseUri: process.env.API_URL || "http://localhost:1338",
     VERSION: "0.0.1",
-    emailSender : process.env.EMAIL_SENDER,
+    emailSender : process.env.FORM_SENDER,
     emailConfirm: process.env.FORM_CONFIRM,
     development : process.env.NODE_ENV === 'development' ? true : false
   },
