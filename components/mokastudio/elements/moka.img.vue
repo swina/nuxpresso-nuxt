@@ -10,6 +10,7 @@ export default {
     methods:{
         image(){
                 if ( process.env.development ){
+
                     let img = ''
                         this.el.image.url.includes('http') ?
                             img = this.el.image.url : 

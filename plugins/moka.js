@@ -56,16 +56,15 @@ function cssResponsive ( classe ){
 
 function imageURL ( image ){
     if ( !image ) return false
-    return image.url
-    /*let url = ''
-        image.previewUrl ? 
-            image.previewUrl.includes('http') ? 
-                url = image.previewUrl : 
-                    url = process.env.VUE_APP_API_URL + image.previewUrl.replace('/','') :
-                        image.url.includes('http') ? url = image.url : 
-                            url = process.env.VUE_APP_API_URL + image.url.replace('/','') 
+    //return image.url
+    let url = ''
+        image.url ? 
+            !image.url.includes('http') ? 
+                !process.env.development ?
+                    url = image.url : 
+                        url = process.env.strapiBaseUri + image.url.substring(1) :
+                            url = image.url : ''
     return url
-    */
 }
 
 
@@ -84,10 +83,11 @@ Vue.prototype.$background = ( block ) => {
 
 Vue.prototype.$imageURL = ( image ) => {
     if ( !image ) return false
-    let url = ''
-    image.url.includes('http') ? url = image.url : 
-        url = image.url //process.env.API_URL + image.url.replace('/','') 
-    return url
+    return imageURL ( image )
+    //let url = ''
+    //image.url.includes('http') ? url = image.url : 
+    //    url = image.url //process.env.API_URL + image.url.replace('/','') 
+    //return url
     
 }
 
