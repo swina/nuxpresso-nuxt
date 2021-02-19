@@ -13,7 +13,7 @@
             </template>
             
             
-            <div v-if="doc.slider.dots.enable" class="absolute bottom-0 left-0 text-center flex-row justify-center items-center mb-10 md:mb-4 w-full">
+            <div v-if="doc.slider.dots.enable" class="xs:hidden md:absolute bottom-0 left-0 text-center flex-row justify-center items-center p-1 w-full">
               <i :class="'material-icons mr-2 ' + dotActive(n)" v-for="n in doc.blocks.length" @click="goTo(n-1)">fiber_manual_record</i>
             </div>
 

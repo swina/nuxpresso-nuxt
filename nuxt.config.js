@@ -181,14 +181,15 @@ export default {
    */
   generate: {
     routes: dynamicRoutes, //add dynamic routes
-    fallback: true
+    fallback: true,
+    dir: process.env.DESTINATION_FOLDER || 'dist'
   },
   build: {
     /*
      ** You can extend webpack config here
      */
     srcDir: 'src',
-    buildDir: 'dist',
+    buildDir: process.env.DESTINATION_FOLDER || 'dist',
     extractCSS: true,
     
     // this is not required, output as one css file instead of one by page.
