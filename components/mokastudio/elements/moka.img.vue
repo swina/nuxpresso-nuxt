@@ -1,5 +1,5 @@
 <template>
-    <img v-if="el.image" :ref="el.id" :src="image()" :caption="el.image.caption||el.image.name" :alt="el.image.alternativeText||el.image.name" :title="el.image.name.split('.')[0]" :class="$cssResponsive(el.css)" :style="el.style"/>
+    <img v-if="el.image" :ref="el.id" :src="image()" :caption="el.image.caption||el.image.name" :alt="el.image.alternativeText||el.image.name" :title="el.image.name.split('.')[0]" :class="$cssResponsive(el.css) + imageDefaultCss" :style="el.style"/>
 </template>
 
 <script>
@@ -7,14 +7,19 @@ var gsap
 export default {
     name: 'MokaImgElement',
     props: ['el'],
+    computed:{
+        imageDefaultCss(){
+            return !this.el.css ? 'w-full h-auto' : ''
+        }
+    },
     methods:{
         image(){
                 if ( process.env.development ){
-
                     let img = ''
                         this.el.image.url.includes('http') ?
                             img = this.el.image.url : 
                                 img = process.env.strapiBaseUri + this.el.image.url.substring(1)
+                             
                     return img
                 } else {
                     if ( process.client ){

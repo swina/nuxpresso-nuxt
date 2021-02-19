@@ -8,18 +8,24 @@
              
             <moka-element
                 @click="elementAction"
-                v-if="block && !block.hasOwnProperty('blocks')"
+                v-if="block && !block.hasOwnProperty('blocks') || block.hasOwnProperty('items')"
                 :key="block.id"
-                :element="block"
-                :coords="[b]"
-                :refreshAnimation="refreshAnimation||$attrs.refreshAnimation"
+                :el="block"
+                :element="block" 
                 :develop="false"/> 
             
             <moka-slider-container
-                v-if="block && block.hasOwnProperty('blocks')" @action="elementAction" 
+                v-if="block && block.hasOwnProperty('blocks') && !block.hasOwnProperty('blocks_flip')" @action="elementAction" 
                 :doc="block" :refreshAnimation="refreshAnimation"/>
             <!--<moka-slider :key="block.id" :ref="block.id" v-if="block && block.hasOwnProperty('slider')" :develop="true" :embeded="true" :doc="block" :editor="true"/>-->
-            
+            <moka-flipbox
+                :key="block.id" 
+                :ref="block.id" 
+                v-if="block && block.hasOwnProperty('blocks_flip')" 
+                :develop="false" 
+                :embeded="true" 
+                :doc="block" 
+                :editor="true"/>
         </template>
         
     </div>
@@ -27,7 +33,8 @@
 </template>
 
 <script>
-import MokaElement from '@/components/mokastudio/moka.element'
+import MokaElement from '@/components/mokastudio/moka.element.component'
+import MokaFlipbox from '@/components/mokastudio/moka.flipbox'
 import { mapState } from 'vuex'
 
 import gsap from 'gsap'
@@ -37,7 +44,7 @@ const plugins = [ScrollTrigger];
 
 export default {
     name: 'MokaSliderContainer',
-    components: { MokaElement  },
+    components: { MokaElement , MokaFlipbox },
     props: [ 'doc'  ],
     computed:{
         ...mapState(['moka']),
@@ -71,9 +78,9 @@ export default {
             if ( !block ) return 
             return block.hasOwnProperty('image') ?
                 block.image && block.image.url ? 
-                    block.image.previewUrl ? 
-                        ' background-image:url(' + block.image.previewUrl + ');background-size:cover;background-repeat:no-repeat;' :
-                            ' background-image:url(' + block.image.url + ');' : ''  : ''        
+                    ' background-image:url(' + this.$imageURL(block.image) + ');' :
+                    '' : ''
+                    
         },
         elementAction(action){
             this.$emit('action',action)

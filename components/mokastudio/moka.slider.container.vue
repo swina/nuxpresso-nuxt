@@ -7,15 +7,24 @@
              
             <moka-element
                 @click="elementAction"
-                v-if="block && !block.hasOwnProperty('blocks') || block.hasOwnProperty('items')"
+                v-if="block && !block.hasOwnProperty('blocks') || block.hasOwnProperty('items') && !block.hasOwnProperty('blocks_flip')"
                 :key="block.id"
                 :element="block"
                 :coords="[b]"
                 :develop="false"/> 
 
             <moka-slider-container
-                v-if="block && !block.hasOwnProperty('slider') && block.hasOwnProperty('blocks') && !block.hasOwnProperty('menu')" @action="elementAction" 
+                v-if="block && !block.hasOwnProperty('slider') && block.hasOwnProperty('blocks') && !block.hasOwnProperty('menu') && !block.hasOwnProperty('blocks_flip')" @action="elementAction" 
                 :doc="block"/>
+            
+            <moka-flipbox
+                :key="block.id" 
+                :ref="block.id" 
+                v-if="block && block.hasOwnProperty('blocks_flip')" 
+                :develop="false" 
+                :embeded="true" 
+                :doc="block" 
+                :editor="true"/>
             <!--<moka-slider :key="block.id" :ref="block.id" v-if="block && block.hasOwnProperty('slider')" :develop="true" :embeded="true" :doc="block" :editor="true"/>-->
             
         </template>
@@ -24,7 +33,7 @@
 </template>
 
 <script>
-import MokaElement from '@/components/mokastudio/moka.element'
+import MokaElement from '@/components/mokastudio/moka.element.component'
 import { mapState } from 'vuex'
 
 import gsap from 'gsap'

@@ -3,7 +3,7 @@
         :id="doc && doc.hasOwnProperty('anchor')? doc.anchor : doc.id"
         v-if="doc" 
         :key="doc.id"
-        :class="'content max-w-screen overflow-x-hidden relative flex flex-no-wrap block ' + classe(doc.css)" :style="doc.style + ' ' +  background(doc)" :ref="doc.id">
+        :class="'content overflow-hidden max-w-screen overflow-x-hidden relative flex flex-no-wrap block ' + classe(doc.css)" :style="doc.style + ' ' +  background(doc)" :ref="doc.id">
         
             <template v-for="(block,i) in doc.blocks">
                   <moka-preview-container
@@ -134,7 +134,7 @@ export default {
             return block.hasOwnProperty('image') ?
                 block.image && block.image.url ? 
                     block.image.previewUrl ? 
-                        ' background-image:url(' + block.image.previewUrl + ');background-size:cover;background-repeat:no-repeat;' :
+                        ' background-image:url(' + block.image.previewUrl + ');' :
                             ' background-image:url(' + block.image.url + ');' : ''  : ''        
         },
         animate(element,id){

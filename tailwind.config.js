@@ -37,7 +37,9 @@ module.exports = {
       'md': '0.375rem',
       'lg': '0.5rem',
       'full': '9999px',
-      'xl': '4rem',
+      'xl': '1rem',
+      '2xl' : '1.5rem',
+      '3xl': '2rem'
     },
     fontFamily: {
       display: ['Barlow Condensed','Abel','Alice','Amethysta', 'sans-serif']
@@ -191,7 +193,7 @@ module.exports = {
     ],
     options: {
       whitelist: ['html','body'],
-      whitelistPatterns: [/^leading/,/^bg/,/^text/,/^border/,/^hover/,/^grid/,/^grid-cols-/,/^m/,/^p/,/^flex/,/^order/,/^md:/,/^lg:/,/^w/,/^h/,/^rounded/,/^content/,/^items/,/^object/,/^font/,/^animate/,/^shadow/,/^gap/,/^grayscale/]
+      whitelistPatterns: [/^leading/,/^bg/,/^text/,/^border/,/^hover/,/^grid/,/^grid-cols-/,/^m/,/^p/,/^flex/,/^order/,/^md:/,/^lg:/,/^w/,/^h/,/^rounded/,/^content/,/^items/,/^object/,/^font/,/^animate/,/^shadow/,/^gap/,/^grayscale/,/^justify/,/^gradient/,/^from/,/^to/]
     }
   }
 }

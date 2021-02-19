@@ -108,7 +108,6 @@ export default {
         classe(css){
           if ( !css ) return
           let flipbox = ''
-          console.log ( this.doc )
           this.doc.hasOwnProperty('image_flip') ? flipbox = ' relative ' : null
           return css.hasOwnProperty('css') ? css.css + ' ' + css.container + flipbox : css + flipbox
         },
@@ -182,7 +181,6 @@ export default {
         })
     },
     beforeDestroy(){
-      console.log ( 'destroy timer ...' )
       clearInterval(this.timer)
       this.timer = null
     }
