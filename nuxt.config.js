@@ -9,13 +9,6 @@ console.log (  'Strapi CMS => ' , process.env.API_URL )
 function importAssets(){
   // With Promises:
   console.log ( 'Importing assets ...')
-  fs.copy(process.env.UPLOADS_FOLDER ,'./static/uploads' )
-  .then(() => {
-    console.log('Assets imported!')
-  })
-  .catch(err => {
-    console.error(err)
-  })
 }
 
 //default dynamic routes used by nuxpresso
