@@ -2,8 +2,7 @@
     <component
         :is="semantic"
         :id="doc.hasOwnProperty('anchor')? doc.anchor : doc.id"
-        v-if="doc &&  modal " 
-        :modal="popup" 
+        v-if="doc"
         :class="$classe(doc.css)" :style="$stile(doc) + ' ' +  $background(doc)" :ref="doc.id">
         <template v-for="(block,b) in doc.blocks">
 
@@ -22,7 +21,7 @@
                 :article="$attrs.article"
                 :start="$attrs.start"
                 :limit="$attrs.limit"
-                v-if="$isMokaContainer(block,doc) && block.tag!='form'  && !block.hasOwnProperty('image_flip')" 
+                v-if="$isMokaContainer(block,doc) && block.tag!='form'  && !block.hasOwnProperty('image_flip') && !block.hasOwnProperty('popup')" 
                 :doc="block"/>
 
             <!-- articles loop template (grid) -->
@@ -52,6 +51,15 @@
                 :embeded="true" 
                 :doc="block" 
                 :editor="true"/>
+            
+            <moka-popup
+                :key="block.id" 
+                :ref="block.id" 
+                v-if="block && block.hasOwnProperty('popup')" 
+                :develop="true" 
+                :embeded="true" 
+                :doc="block" 
+                :editor="true"/>
 
         </template>
         <i class="material-icons absolute top-0 right-0 m-1" v-if="doc.hasOwnProperty('popup') && doc.popup.close" @click="popupClose">close</i>
@@ -66,6 +74,7 @@ import MokaSlider from '@/components/mokastudio/slider/moka.slider'
 import MokaArticlesLoop from '@/components/mokastudio/moka.preview.container.loop'
 import MokaForm from '@/components/mokastudio/moka.preview.form'
 import MokaFlipbox from './moka.flipbox'
+import MokaPopup from './moka.popup'
 //import MokaArticlesLoop from '@/components/mokastudio/moka.preview.articles.loop'
 import { mapState } from 'vuex'
 
@@ -76,7 +85,7 @@ const plugins = [ScrollTrigger];
 
 export default {
     name: 'MokaPreviewContainer',
-    components: { MokaElement , MokaSlider , MokaArticlesLoop , MokaForm  , MokaFlipbox},
+    components: { MokaElement , MokaSlider , MokaArticlesLoop , MokaForm  , MokaFlipbox, MokaPopup },
     props: [ 'doc'  ],
     data:()=>({
         modal: true

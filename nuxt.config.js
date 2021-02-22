@@ -3,12 +3,39 @@ import path from 'path'
 import axios from 'axios'
 import fs from 'fs-extra'
 dotenv.config()
-console.log (  'Strapi CMS => ' , process.env.API_URL )
+var strapiURL
+
+/**
+ * 
+ * Multisite configuration
+ * You can run a single nuxpresso installation for multiple sites, without cloning the repo each time
+ * Create a main working folder and relative subfolders 
+ * ex.
+ *  /myfolder/
+ *    /website 1
+ *    /website 2
+ * 
+ * Create a /myfolder/config.js 
+ */
+if ( process.env.MULTI_SITE ){
+  strapiURL = require ( process.env.MULTI_CONFIG_PATH ) 
+  console.log ( 'Strapi CMS => ' , strapiURL.url )
+  console.log ( 'Destination folder => ' , strapiURL.dist )
+} else {
+  strapiURL = null
+}
 
 //Full Static mode and local upload copy Strapi uploads folder to static folder
 function importAssets(){
   // With Promises:
   console.log ( 'Importing assets ...')
+  fs.copy(process.env.UPLOADS_FOLDER ,'./static/uploads' )
+  .then(() => {
+    console.log('Assets imported!')
+  })
+  .catch(err => {
+    console.error(err)
+  })
 }
 
 //default dynamic routes used by nuxpresso
@@ -18,10 +45,11 @@ let dynamicRoutes = () => {
 
   //generate dynamic routes /category/<category_slug>
   return new Promise(resolve => {
-    axios.get( process.env.API_URL + 'categories' ).then ( response => {
+    let url = strapiURL.url || process.env.API_URL
+    axios.get( url + 'categories' ).then ( response => {
       if ( !response.data ) return false
       const cats = response.data
-      axios.get( process.env.API_URL + 'articles' ).then( response => {
+      axios.get( url + 'articles' ).then( response => {
         const categories = cats.map ( el => {
           return {
             route: '/category/' + el.slug,
@@ -46,7 +74,6 @@ let dynamicRoutes = () => {
   })
 }
 
-console.log ( process.env.NODE_ENV )
 export default {
   
   target: 'static',
@@ -55,7 +82,7 @@ export default {
    ** Headers of the page
    */
   env: {
-    strapiBaseUri: process.env.API_URL || "http://localhost:1338",
+    strapiBaseUri: strapiURL.url || process.env.API_URL || "http://localhost:1338",
     VERSION: "0.0.1",
     emailSender : process.env.FORM_SENDER,
     emailConfirm: process.env.FORM_CONFIRM,
@@ -78,7 +105,7 @@ export default {
       {
         //Used fonts
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family="+process.env.FONT_FAMILIES
+        href: "https://fonts.googleapis.com/css?family="  + process.env.FONT_FAMILIES || "Roboto"
       },
       { 
         //Material Design Icons
@@ -158,13 +185,13 @@ export default {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: (process.env.API_URL ) + "graphql",
+        httpEndpoint: ( strapiURL.url || process.env.API_URL ) + "graphql",
         fetchPolicy: 'cache'
       }
     }
   },
   axios: {
-    baseUrl: process.env.API_URL 
+    baseUrl: strapiURL.url || process.env.API_URL 
   },
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS || 'UA-XXX-X'
@@ -175,14 +202,14 @@ export default {
   generate: {
     routes: dynamicRoutes, //add dynamic routes
     fallback: true,
-    dir: process.env.DESTINATION_FOLDER || 'dist'
+    dir: strapiURL.dist || process.env.DESTINATION_FOLDER || 'dist'
   },
   build: {
     /*
      ** You can extend webpack config here
      */
     srcDir: 'src',
-    buildDir: process.env.DESTINATION_FOLDER || 'dist',
+    buildDir: strapiURL.dist || process.env.DESTINATION_FOLDER || 'dist',
     extractCSS: true,
     
     // this is not required, output as one css file instead of one by page.

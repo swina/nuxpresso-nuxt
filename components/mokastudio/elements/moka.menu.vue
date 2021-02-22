@@ -33,7 +33,7 @@
     
     <!-- responsive -->
     <i :class="'material-icons moka-icons z-max fixed md:hidden top-0 right-0 m-1 ' + el.css.css" v-if="settings && el.element === 'menu' && el.responsive" @click="showmenu" style="font-size:2rem;">menu</i>
-    <transition :name="settings.responsive_menu_transition || 'fade'">
+    <transition :name="settings && settings.responsive_menu_transition ? settings.responsive_menu_transition : 'fade'">
         <nav v-if="menu_show" :class="el.css.responsive + ' ' + settings.responsive_menu_css "> 
             <i :class="'bi-x-circle moka-icons z-max text-2xl md:hidden fixed top-0 right-0 m-2 ' + el.css.css" v-if="el.element === 'menu' && el.responsive" @click="showmenu"></i>
             <div v-for="(item,i) in el.items" :class="el.css.css + ' cursor-pointer relative p-1'"> 

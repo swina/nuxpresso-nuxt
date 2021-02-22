@@ -3,7 +3,7 @@
         :id="doc.hasOwnProperty('anchor')? doc.anchor : $randomID()"
         v-if="doc" 
         :key="$randomID()" 
-        :class="classe(doc.css) + ' flex-wrap'" :style="doc.style + ' ' +  background(doc)" :ref="doc.id">
+        :class="classe(doc.css) + ' flex-wrap'" :style="doc.style + ' ' +  $background(doc.image)" :ref="doc.id">
         <template v-for="(block,b) in doc.blocks">
             
             <template v-for="article in $attrs.articles">

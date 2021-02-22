@@ -130,12 +130,25 @@ p > pre {
 }
 
 .modal {
-    @apply fixed;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  position:fixed;
 }
 
+.modal-bottom {
+bottom:0;
+left:50%;
+transform: translateX(-50%);
+position: fixed;  
+}
+
+.modal-top {
+top:0;
+left:50%;
+transform: translateX(-50%);
+position: fixed;  
+}
 
 .nuxpresso-modal {
     top:50%;

@@ -2,7 +2,7 @@
     <div 
         :id="doc.hasOwnProperty('anchor')? doc.anchor : doc.id"
         v-if="doc"
-        :class="classe(doc.css)" :style="doc.style + ' ' +  background(doc)" :ref="doc.id">
+        :class="classe(doc.css)" :style="doc.style + ' ' +  $background(doc)" :ref="doc.id">
         <template v-for="(block,b) in doc.blocks">
 
             <moka-element
@@ -69,7 +69,6 @@ export default {
         },
         background(block){
             if ( !block ) return ''
-            console.log ( block.image )
             return this.$imageURL(block.image) //this.$imageURL ( block.image )
 
             return block.hasOwnProperty('image') ?

@@ -100,7 +100,7 @@ gsap.registerEffect({
                 scale:1,
                 duration: config.duration,
                 ease: config.ease,
-                clearProps: 'all' 
+                clearProps: 'opacity' 
             }
         );
     },
@@ -122,7 +122,7 @@ gsap.registerEffect({
                 duration: config.duration,
                 delay: config.delay,
                 ease: config.ease,
-                clearProps: 'all'
+                clearProps: 'opacity'
             }
         );
     },
@@ -144,7 +144,7 @@ gsap.registerEffect({
                 duration: config.duration,
                 delay: config.delay ,
                 ease: config.ease,
-                clearProps: 'all'
+                clearProps: 'opacity'
             }
         );
     },
@@ -168,7 +168,7 @@ gsap.registerEffect({
                 duration: 1,
                 delay: config.delay,
                 ease: config.ease,
-                clearProps: 'all' 
+                clearProps: 'opacity' 
             }
         );
     },
@@ -192,7 +192,7 @@ gsap.registerEffect({
                 duration:config.duration,
                 delay: config.delay,
                 ease: config.ease,
-                clearProps: 'all'
+                clearProps: 'opacity'
             }
         )
     },
@@ -216,7 +216,7 @@ gsap.registerEffect({
                 duration:config.duration,
                 delay: config.delay,
                 ease: config.ease,
-                clearProps: 'all'
+                clearProps: 'opacity'
             }
         )
     },
@@ -242,7 +242,7 @@ gsap.registerEffect({
                 duration:config.duration,
                 delay: config.delay,
                 ease: config.ease,
-                clearProps: 'all'
+                clearProps: 'opacity'
             }
         )
     },
@@ -266,7 +266,7 @@ gsap.registerEffect({
                 duration:config.duration,
                 delay: config.delay,
                 ease: config.ease,
-                clearProps: 'all'
+                clearProps: 'opacity'
             }
         )
     },
@@ -290,7 +290,7 @@ gsap.registerEffect({
                 duration:config.duration,
                 delay: config.delay,
                 ease: config.ease,
-                clearProps: 'all'
+                clearProps: 'opacity'
             }
         )
     },
@@ -317,7 +317,7 @@ gsap.registerEffect({
                 duration:config.duration,
                 delay: config.delay,
                 ease: config.ease,
-                clearProps: 'all'
+                clearProps: 'opacity'
             }
         )
     },
@@ -340,7 +340,7 @@ gsap.registerEffect({
                 duration:config.duration,
                 delay: config.delay,
                 ease: config.ease,
-                clearProps: 'all'
+                clearProps: 'opacity'
             }
         )
     },
@@ -361,7 +361,7 @@ gsap.registerEffect({
                 duration:config.duration,
                 delay: config.delay,
                 ease: config.ease,
-                clearProps: 'all'
+                clearProps: 'opacity'
             }
         )
     },
@@ -385,7 +385,7 @@ gsap.registerEffect({
                 duration:config.duration,
                 delay: config.delay,
                 ease: config.ease,
-                clearProps: 'all'
+                clearProps: 'opacity'
             }
         )
     },

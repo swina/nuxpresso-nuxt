@@ -194,7 +194,7 @@ module.exports = {
     ],
     options: {
       whitelist: ['html','body'],
-      whitelistPatterns: [/^leading/,/^bg/,/^text/,/^border/,/^hover/,/^grid/,/^grid-cols-/,/^m/,/^p/,/^flex/,/^order/,/^md:/,/^lg:/,/^w/,/^h/,/^rounded/,/^content/,/^items/,/^object/,/^font/,/^animate/,/^shadow/,/^gap/,/^grayscale/,/^justify/,/^gradient/,/^from/,/^to/]
+      whitelistPatterns: [/^leading/,/^bg/,/^text/,/^border/,/^hover/,/^grid/,/^grid-cols-/,/^m/,/^p/,/^flex/,/^order/,/^md:/,/^lg:/,/^w/,/^h/,/^rounded/,/^content/,/^items/,/^object/,/^font/,/^animate/,/^shadow/,/^gap/,/^grayscale/,/^justify/,/^gradient/,/^from/,/^to/,/^opacity/]
     }
   }
 }

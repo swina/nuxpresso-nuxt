@@ -1,7 +1,10 @@
 <template>
-    <a :href="link" class="" :target="target"  @click="action">
-        <component :is="component" :component="component" :el="el"/>
-    </a>
+    <span @click="action">
+        <a v-if="!el.link.includes('#popup?')" :href="link" :target="target">
+            <component :is="component" :component="component" :el="el"/>
+        </a>
+        <component v-if="el.link.includes('#popup?')" :is="component" :component="component" :el="el" @click="prevent"/>
+    </span>
 </template>
 
 <script>
@@ -27,11 +30,21 @@ export default {
         }
     },
     methods:{
-        action(){
-            if ( this.elementAction ){
-                this.$store.dispatch ( this.elementAction.action , this.elementAction.value )
-            } else {
-                return null
+        prevent(e){
+            e.preventDefault()
+        },
+        action(e){
+            if ( this.el.link && this.el.link.includes('#popup?') ){
+                e.preventDefault()
+                this.elementAction = { action:  'popup' , value: this.el.link.split('?')[1] }
+                console.log ( this.elementAction )
+                if ( this.elementAction ){
+                    this.$store.state.popup ?
+                        this.$store.dispatch ( 'popup' , null ) :
+                            this.$store.dispatch ( this.elementAction.action , this.elementAction.value )
+                } else {
+                    return null
+                }
             }
         }
     }
