@@ -16,8 +16,13 @@ var strapiURL
  *    /website 2
  * 
  * Create a /myfolder/config.js 
+ * const strapi = { url: '<STRAPI_URL>>' , dist: '<PATH_OF_DIST_FOLDER>' }
+ * module.exports = strapi
+ * 
+ * Changing the strapi url and the dist folder path you can use a single nuxpresso installation
+ * to generate different website powered by Strapi
  */
-if ( process.env.MULTI_SITE ){
+if ( process.env.MULTI_SITE && process.env.MULTI_CONFIG_PATH ){
   strapiURL = require ( process.env.MULTI_CONFIG_PATH ) 
   console.log ( 'Strapi CMS => ' , strapiURL.url )
   console.log ( 'Destination folder => ' , strapiURL.dist )

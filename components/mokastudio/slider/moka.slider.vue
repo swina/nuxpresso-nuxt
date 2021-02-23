@@ -3,7 +3,7 @@
         :id="doc && doc.hasOwnProperty('anchor')? doc.anchor : doc.id"
         v-if="doc" 
         :key="doc.id"
-        :class="'content overflow-hidden max-w-screen overflow-x-hidden relative flex flex-no-wrap block ' + classe(doc.css)" :style="doc.style + ' ' +  background(doc)" :ref="doc.id">
+        :class="'overflow-hidden max-w-screen overflow-x-hidden relative flex flex-no-wrap block ' + classe(doc.css)" :style="doc.style + ' ' +  background(doc)" :ref="doc.id">
         
             <template v-for="(block,i) in doc.blocks">
                   <moka-preview-container
@@ -18,10 +18,10 @@
             </div>
 
             <div v-if="doc.slider.navigation.enable">
-              <div :class="'absolute top-0 left-0 h-full flex justify-center items-center p-1 ' + over" @click="goTo(index-1)">
+              <div :class="'absolute top-0 left-0 h-full flex justify-center items-center p-1 ' + over" @click="goTo(index-1)" v-if="index > 0">
                 <i :class="'slider-navigation-icon material-icons text-4xl ' + doc.slider.navigation.css">{{ doc.slider.navigation.icons[0]}}</i>
               </div>
-              <div :class="'absolute top-0 right-0 h-full flex justify-center items-center p-1 ' + over" @click="goTo(index+1)">
+              <div :class="'absolute top-0 right-0 h-full flex justify-center items-center p-1 ' + over" @click="goTo(index+1)" v-if="index < doc.blocks.length-1">
                 <i :class="'slider-navigation-icon material-icons text-4xl ' + doc.slider.navigation.css">{{ doc.slider.navigation.icons[1]}}</i>
               </div>
             </div>

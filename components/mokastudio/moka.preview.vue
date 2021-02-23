@@ -1,5 +1,5 @@
 <template> 
-    <div :ref="doc.id" :class="$classe(doc.css)" :style="$stile(doc) + ' ' + $background(doc)" id="content">
+    <div :ref="doc.id" :class="'max-w-screen ' + $classe(doc.css)" :style="$stile(doc) + ' ' + $background(doc)" id="content">
         <!-- 1st level - BLOCKS LOOP -->
             <template v-for="(block,b) in doc.blocks">
                 <!-- video background -->
@@ -39,7 +39,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin ( ScrollTrigger )
 const plugins = [ScrollTrigger];
 import gsapEffects from '@/plugins/animations'
-
 export default {
     name: 'MokaPreview',
     data:()=>({

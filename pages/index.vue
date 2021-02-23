@@ -1,15 +1,12 @@
 <template>
-  <div>
+  <div class="max-w-screen w-screen">
     <client-only>
-      <!--<nuxpresso-moka-template v-if="homepage && components" :doc="components.json" :article="homepage"/>-->
-      
       <nuxpresso-moka-template v-if="homepage" :doc="homepage.blocks.json" :article="homepage"/>
     </client-only>
   </div>
 </template>
 
 <script>
-import qryTemplate from '@/apollo/queries/component/component.template'
 import qryHome from '@/apollo/queries/article/article-home'
 import NuxpressoMokaTemplate from '@/components/mokastudio/moka.preview'
 import { mapState } from 'vuex'
@@ -38,7 +35,7 @@ export default {
         
   },
   computed: {
-    //...mapState( ['homepage'] ),
+    ...mapState( ['settings'] ),
   },
   
   async asyncData({app}){

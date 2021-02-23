@@ -41,7 +41,13 @@
                 v-if="block.tag==='form'"
                 :doc="block"/>
             <!-- render slider -->
-            <moka-slider :key="block.id" v-if="block && block.hasOwnProperty('slider')" :develop="false" :embeded="true" :doc="block" :editor="false"/> 
+            <moka-slider 
+                :key="block.id" 
+                v-if="block && block.hasOwnProperty('slider')" 
+                :develop="false" 
+                :embeded="true" 
+                :doc="block" 
+                :editor="false"/> 
 
             <moka-flipbox
                 :key="block.id" 
@@ -50,7 +56,7 @@
                 :develop="true" 
                 :embeded="true" 
                 :doc="block" 
-                :editor="true"/>
+                :editor="false"/>
             
             <moka-popup
                 :key="block.id" 

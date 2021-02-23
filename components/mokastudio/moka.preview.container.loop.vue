@@ -47,7 +47,7 @@
                 </div>
             </template>
         </template>
-        <div class="w-ful p-2 cursor-pointer items-center justify-center flex flex-row">
+        <div v-if="paging.pages > 1" class="w-ful p-2 cursor-pointer items-center justify-center flex flex-row">
             <i class="material-icons mr-2 text-2xl" @click="$store.dispatch('set_loop_action' ,'prev')">chevron_left</i>
             {{ paging.current }} / {{ paging.pages }}
             <i class="material-icons mr-2 text-2xl" @click="$store.dispatch('set_loop_action' ,'next')">chevron_right</i>
@@ -82,9 +82,10 @@ export default {
             return gsapEffects
         },
         paging(){
+            let total_pages = Math.round(this.$attrs.articles.length/this.$attrs.limit)
             let pages = {
                 current: 1,
-                pages: Math.round(this.$attrs.articles.length/this.$attrs.limit)+1
+                pages: total_pages
             }
             this.$attrs.start > 0 ?
                 pages.current = Math.round(this.$attrs.start/this.$attrs.limit)+1 
